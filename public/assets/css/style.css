@@ -1,0 +1,8 @@
+/* CSS */
+.sidebar {
+    top: 0;
+}
+
+.content {
+    z-index: 5; /* Konten utama ditempatkan di atas sidebar */
+}
