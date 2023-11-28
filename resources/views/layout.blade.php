@@ -13,12 +13,13 @@
         <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="pb-5">
+    @include('sweetalert::alert')
 
     <!-- Header -->
     <header>
         <nav class="w-full">
-            <div class="header bg-blue py-4 relative z-10 flex items-center px-6">
+            <div class="header bg-blue py-3 relative z-10 flex items-center px-6">
                 <button id="menuButton" class="text-white text-xl focus:outline-none mr-5">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -29,62 +30,62 @@
 
             <div
                 class="sidebar fixed inset-y-0 left-0 z-0 w-72 bg-white border-r border-gray-300 text-white p-4 transform -translate-x-full transition duration-300 ease-in-out">
-                <a href="#">
+                <a href="/invoice">
                     <div class="text-black mt-20 p-3 first-line:rounded-md font-bold hover:shadow-md @yield('invoice')">
                         <i class="fa-solid fa-file-invoice text-blue text-2xl pr-5"></i> 
                         Invoices
                     </div>
                 </a>
-                <a href="#">
+                <a href="/receipt">
                     <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('receipt')">
                         <i class="fa-solid fa-receipt text-blue text-2xl pr-5"></i> 
                         Receipt
                     </div>
                 </a>
-                <a href="#">
-                    <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('faktur')">
+                <a href="/faktur-pajak">
+                    <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('faktur-pajak')">
                         <i class="fa-solid fa-file-invoice-dollar text-blue text-2xl pr-5"></i> 
                         Faktur Pajak
                     </div>
                 </a>
-                <a href="#">
+                <a href="/ktp">
                     <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('ktp')">
                         <i class="fa-solid fa-id-card text-blue text-2xl pr-3"></i> 
                         KTP
                     </div>
                 </a>
-                <a href="#">
+                <a href="/stnk">
                     <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('stnk')">
                         <i class="fa-solid fa-file-powerpoint text-blue text-2xl pr-5"></i> 
                         STNK
                     </div>
                 </a>
-                <a href="#">
+                <a href="/bpkb">
                     <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('bpkb')">
                         <i class="fa-solid fa-file-lines text-blue text-2xl pr-5"></i> 
                         BPKB
                     </div>
                 </a>
-                <a href="#">
-                    <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('bank')">
+                <a href="/bank-statement">
+                    <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('bank-statement')">
                         <i class="fa-solid fa-file text-blue text-2xl pr-5"></i> 
                         Bank Statement
                     </div>
                 </a>
-                <a href="#">
+                <a href="/npwp">
                     <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('npwp')">
                         <i class="fa-solid fa-id-card-clip text-blue text-2xl pr-3"></i> 
                         NPWP
                     </div>
                 </a>
-                <a href="#">
+                <a href="/passport">
                     <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('passport')">
                         <i class="fa-solid fa-passport text-blue text-2xl pr-5"></i> 
                         Passport
                     </div>
                 </a>
-                <a href="#">
-                    <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('kk')">
+                <a href="/kartu-keluarga">
+                    <div class="text-black p-3 mt-1 first-line:rounded-md font-bold hover:shadow-md @yield('kartu-keluarga')">
                         <i class="fa-solid fa-file-image text-blue text-2xl pr-5"></i> 
                         Kartu Keluarga
                     </div>
