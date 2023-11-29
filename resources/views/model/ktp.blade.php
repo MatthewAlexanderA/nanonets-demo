@@ -12,7 +12,7 @@ shadow-lg bg-slate-50
             class="text-black">KTP</span></h1>
     <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 lg:gap-x-12 lg:px-10 px-5">
         <div class="">
-            <form action="{{ route('extractKtp') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('extractKtp') }}" method="post" enctype="multipart/form-data" id="extract">
                 @csrf
                 <label for="file-input" id="dropArea">
                     <div class="border-2 border-dashed border-gray-400 rounded-md">
@@ -75,7 +75,7 @@ shadow-lg bg-slate-50
                     @endforeach
                     @foreach ($data as $item)
                         @if ($item['label'] == 'table')
-                        <div class="p-5 mt-3">
+                        <div class="lg:p-5 p-0 mt-3" style="overflow-x: auto;">
                             <table class="border-collapse border border-slate-400">
                                 <thead>
                                     <tr>
@@ -114,13 +114,26 @@ shadow-lg bg-slate-50
                 </div>
             @else
                 <div class="grid justify-items-center pt-5 text-center">
-                    <img src="assets/images/blank.jpg" alt="" class="w-1/2">
-                    <span>kindly upload file document for processing</span>
+                    <img src="assets/images/blank.jpg" alt="" class="w-1/2" id="folderImage">
+                    <img src="assets/images/loading.gif" alt="" class="hidden" alt="Loading..." id="loadingImage">
+                    <span id="textUpload">kindly upload file document for processing</span>
                 </div>
             @endif
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('extract').addEventListener('submit', function () {
+        // Show the loading GIF
+        document.getElementById('folderImage').style.display = 'none';
+        document.getElementById('textUpload').style.display = 'none';
+        document.getElementById('loadingImage').style.display = 'inline-block';
+
+        // You can also disable the submit button to prevent multiple submissions
+        document.getElementById('submitButton').disabled = true;
+    });
+</script>
 
 <script>
     const dropArea = document.getElementById('dropArea');
